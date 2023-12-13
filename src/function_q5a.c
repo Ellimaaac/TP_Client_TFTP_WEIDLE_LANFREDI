@@ -50,13 +50,5 @@ int main(int argc, char *argv[]){
 
 	printf("WRQ sent : OK \n");
 
-	// On ouvre et on lit le fichier passé en argument. 
-	int fd = open(fileName, O_RDONLY);
-	if (fd == -1) {
-		perror("Open file");
-		return(EXIT_FAILURE);
-	}
-
-	char file_content[BUF_SIZE_DATA - 4];
 	return(EXIT_SUCCESS);
 }
