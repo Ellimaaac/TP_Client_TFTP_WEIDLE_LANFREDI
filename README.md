@@ -17,6 +17,7 @@ TP de réseaux : Weidle &amp; Lanfredi
 - [x] Question 4.a :tada:
 - [x] Question 4.b :tada:
 - [x] Question 4.c :tada:
+>[!NOTE]
 >20/12 -> Suite du travail pratique
 - [x] Question 5.a :tada:
 
