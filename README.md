@@ -14,7 +14,11 @@ TP de réseaux : Weidle &amp; Lanfredi
 - [x] Question 1 :tada:  
 - [x] Question 2 :tada:  
 - [x] Question 3 :tada:
-- [x] Question 4 :tada:
+- [x] Question 4.a :tada:
+- [x] Question 4.b :tada:
+- [x] Question 4.c :tada:
+>20/12 -> Suite du travail pratique
+- [x] Question 5.a :tada:
 
 ## Organisation du Github
 >[!IMPORTANT]
