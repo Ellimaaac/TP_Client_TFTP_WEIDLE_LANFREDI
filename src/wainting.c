@@ -14,7 +14,6 @@ int main(int argc, char *argv[]){
 	printf("Envoyer %s à l'host : %s@%s \n", fileName, host, port);
 	
 	int n_bytes;
-	char file_content[MAXSIZE - 4];
 	struct addrinfo hints;
 	struct addrinfo *res;
 	memset(&hints, 0, sizeof(struct addrinfo)); // Initialise à 0
@@ -51,55 +50,14 @@ int main(int argc, char *argv[]){
 
 	printf("WRQ sent : OK \n");
 
-	// Ouverture et lecture du fichier passé en argument
-	printf("Hello World : %s", fileName);
-
+	// On ouvre et on lit le fichier passé en argument. 
 	int fd = open(fileName, O_RDONLY);
-
 	if (fd == -1) {
 		perror("Open file");
-		exit(EXIT_FAILURE);
-	}
-
-	if ((n_bytes = read(fd, file_content, MAXSIZE - 4)) == -1) {
-		perror("read file");
-		exit(EXIT_FAILURE);
-	}
-	
-	// Création du paquet DATA
-	memset(buf, 0, MAXSIZE); 
-	buf[1] = 3;
-	buf[3] = 0; 
-	strcpy(buf + 4, file_content);
-	padding = strlen(buf + 4);
-	
-	// envoie DATA
-	if (sendto(sock, buf, padding + 4, 0, res->ai_addr, res->ai_addrlen) == -1) {
-		perror("Send DATA");
-		return(EXIT_FAILURE);
-		}
-
-	printf("Paquet DATA envoyé : ");
-	
-	for (int i = 0; i < 4; i++) {
-		printf("%x", buf[i]);
-	}
-    for (int i = 4; i < padding + 4; i++) {
-		printf("%c", buf[i]);
-	}
-	printf("\n");
-	
-	// Reception ACK
-	if (recvfrom(sock, buf, 4, 0, res->ai_addr, &res->ai_addrlen) == -1) {
-		perror("Receive ACK");
 		return(EXIT_FAILURE);
 	}
-	
-	printf("ACK serveur : ");
-	for (int i = 0; i < 4; i++) {
-		printf("%x", buf[i]);
-	}
-	printf("\n");
 
+	char file_content[BUF_SIZE_DATA - 4];
+	
 	return(EXIT_SUCCESS);
 }
