@@ -4,8 +4,6 @@
 ## TP2 : Majeure Info
 ### Question 1 : 
 
-> 
-
 > On récupère dans argv[1] l’adresse du serveur (on pourrait augmenter la taille du char pour accepter des adresses plus longues, mais dans notre cas c’est suffisant), et on le place dans la variable host  
 > Dans argv[2] on trouve le port.   
 >Et dans argv[3] le nom du fichier concerné qu’on place dans la variable file  
@@ -35,8 +33,6 @@ Après avoir vérifier le nombre d'arguments, il utilise la fonction ***getaddri
 
 ### Question 3 : 
  
->[!NOTE]
->
 ![Screenshot](../capture/Q3.png)
 
 >[!Note]
